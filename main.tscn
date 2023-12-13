@@ -1,0 +1,55 @@
+[gd_scene load_steps=7 format=3 uid="uid://cpewg0p5odc51"]
+
+[ext_resource type="Texture2D" uid="uid://dibvhjm7kue1p" path="res://ShipArrow.png" id="1_nyxap"]
+[ext_resource type="Texture2D" uid="uid://2356gbgpnqrs" path="res://wallpaper_153_1920x1080.jpg" id="1_se7vh"]
+[ext_resource type="Script" path="res://CharacterBody2D.cs" id="2_1uckp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vva4e"]
+radius = 17.7341
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0edbf"]
+size = Vector2(1934.5, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ev40"]
+size = Vector2(21, 1106)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -2)
+texture = ExtResource("1_se7vh")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("2_1uckp")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("1_nyxap")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CircleShape2D_vva4e")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(5.75, 555)
+shape = SubResource("RectangleShape2D_0edbf")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(-966.5, 9)
+shape = SubResource("RectangleShape2D_3ev40")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(-8, -537)
+shape = SubResource("RectangleShape2D_0edbf")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2(959, 9)
+shape = SubResource("RectangleShape2D_3ev40")
